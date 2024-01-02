@@ -43,7 +43,7 @@ prioritizeLinkIconBlackList = isUniqueList ["lilianweng.github.io", "digital.lib
                      "www.acpjournals.org", "www.inverse.com", "hal.science", "www.findarticles.com", "super.gluebenchmark.com", "gluebenchmark.com",
                      "mattmahoney.net", "dataverse.harvard.edu", "projecteuclid.org", "datacolada.org", "pubs.aip.org", "nyaa.si", "memteaimports.com",
                      "jetpress.org", "www.sudowrite.com", "tylervigen.com", "pubs.acs.org", "www.dafont.com", "geminiprotocol.net",
-                     "www.1001fonts.com", "andrewmayne.com", "www.benkuhn.net"]
+                     "www.1001fonts.com", "andrewmayne.com", "www.benkuhn.net", "sive.rs"]
 ------------------------------------------------------------------------------------------
 
 -- Helper functions for URL matches:
@@ -244,6 +244,7 @@ linkIconRulesDouble u
  | u'' u "jaymans.wordpress.com" = ("J👨🏾", "text,sans") -- JayMan
  | u'' u "www.rollingstone.com" = ("𝓡𝐒", "text") -- Rolling Stone <https://www.rollingstone.com/wp-content/uploads/2022/08/cropped-Rolling-Stone-Favicon.png> <https://en.wikipedia.org/wiki/File:Rolling_Stone_2022.svg>
  | u'' u "www.popsci.com" = ("PS", "text,sans") -- Popular Science magazine (no usable or recognizable logos)
+ | u'' u "www.crunchbase.com" = ("cb", "text,sans") -- Crunchbase <https://en.wikipedia.org/wiki/Crunchbase> <https://en.wikipedia.org/wiki/File:Crunchbase_wordmark_dark_blue.svg>
  | otherwise = ("", "")
 
 -- Tri/triple TLAs
@@ -1050,6 +1051,7 @@ linkIconTestUnitsText = isUniqueKeys3
          , ("https://www.nobelprize.org/?p=2688", "🏅", "text")
          , ("https://time.com/6337437/sam-altman-openai-fired-why-microsoft-musk/", "T", "text")
          , ("https://www.cnbc.com/2017/11/15/microsoft-and-github-unveil-pair-programming-tools.html", "CNBC", "text,quad,sans")
+         , ("https://www.crunchbase.com/person/james-c-gaither", "cb", "text,sans")
         ]
 
 -- TODO: more complex link-icon testing: suppression of redundant link-icons

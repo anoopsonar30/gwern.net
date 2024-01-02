@@ -3,7 +3,7 @@
 # upload: convenience script for uploading PDFs, images, and other files to gwern.net. Handles naming & reformatting.
 # Author: Gwern Branwen
 # Date: 2021-01-01
-# When:  Time-stamp: "2023-12-21 09:34:08 gwern"
+# When:  Time-stamp: "2023-12-31 11:51:05 gwern"
 # License: CC-0
 #
 # Upload files to Gwern.net conveniently, either temporary working files or permanent additions.
@@ -21,8 +21,6 @@
 . ~/wiki/static/build/bash.sh
 
 set -e
-
-WWW_BROWSER="chromium"
 
 if [ ! -f "$1" ]; then echo "l20: '$1' is not a file‽" && exit 1; fi
 
@@ -88,10 +86,10 @@ _upload() {
       mv "$TARGET" ~/wiki/doc/www/misc/
       cd ~/wiki/ || exit
       TARGET2="./doc/www/misc/$TARGET"
-      (rsync --chmod='a+r' -q "$TARGET2" gwern@176.9.41.242:"/home/gwern/gwern.net/doc/www/misc/" || \
-          rsync --chmod='a+r' -v "$TARGET2" gwern@176.9.41.242:"/home/gwern/gwern.net/doc/www/misc/"
+      rsync --chmod='a+r' -q "$TARGET2" gwern@176.9.41.242:"/home/gwern/gwern.net/doc/www/misc/" || \
+          rsync --chmod='a+r' -v "$TARGET2" gwern@176.9.41.242:"/home/gwern/gwern.net/doc/www/misc/" &
       URL="https://gwern.net/doc/www/misc/$TARGET"
-      echo "$URL" && $WWW_BROWSER "$URL") &
+      echo "$URL" && $WWW_BROWSER "$URL" &
 
   else
       TARGET_DIR=""
