@@ -1,0 +1,20 @@
+-- cabal.project
+
+-- The following line includes the current directory (your website project)
+packages: .
+
+-- Include the local path to the Hakyll library. Adjust the path as necessary.
+packages: /home/drparadox30/website/hakyll
+
+-- Optional: Override specific version constraints for dependencies here.
+-- For example, if you need to use a specific version of a dependency, you can specify it like this:
+-- constraints: some-dependency ==1.2.3
+
+-- Optional: Optimization and profiling settings can be specified here.
+-- For instance, to enable optimizations, you can use:
+-- optimizations: True
+
+-- Optional: Specify GHC options if needed.
+-- ghc-options: -Wall -O2
+
+-- You can also include other project-wide settings and flags here.

@@ -1,0 +1,52 @@
+cabal-version:       >=1.10
+name:                website
+version:             0.1.0.0
+synopsis:            Brief description of your project
+description:         Detailed description of your project
+license:             BSD3
+license-file:        LICENSE
+author:              Your Name
+maintainer:          you@example.com
+build-type:          Simple
+extra-source-files:  README.md
+
+executable website
+  main-is:             hakyll.hs
+  hs-source-dirs:      ./
+  build-depends:       base >=4.7 && <5
+                     , temporary
+                     , pretty-show
+                     , utf8-string
+                     , filestore
+                     , regex-compat
+                     , regex-tdfa
+                     , pandoc
+                     , pandoc-types
+                     , containers        
+                     , text          
+                     , time              
+                     , network-uri       
+                     , directory        
+                     , filepath
+                     , bytestring
+                     , tagsoup
+                     , http-types
+                     , unix
+                     , HTTP
+                     , base16-bytestring
+                     , mtl
+                     , cryptohash
+                     , tld
+                     , dir-traverse
+                     , uri-encode
+                     , titlecase
+                     , split
+                     , parallel
+                     , aeson
+                     , yaml
+                     , utility-ht
+                     , global-lock
+                     , monad-parallel
+                     , hakyll==4.16.2.0.1
+                     -- Add other dependencies as needed
+  default-language:    Haskell2010
